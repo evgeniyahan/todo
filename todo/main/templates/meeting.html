@@ -14,7 +14,7 @@
 <body>
     <section>
         <div class='create_container'>
-            <input class='create_input' type='text' placeholder="Напишите сюда новую задачу">
+            <input class='create_input' type='text' placeholder="Напишите сюда новую ">
             <button class='create_button'>Добавить</button>
 
         </div>
@@ -33,6 +33,9 @@
                 </div>
                 <div class='todo_item_footer'>
                     <p>{{ tomeet.date_of_meeting }}</p>
+                    <p>{{ tomeet.phone_number }}</p>
+                    <h5>{{ tomeet.is_closed }}</h5>
+                    <h5>{{ tomeet.is_favorite }}</h5>
                     <div class='action_buttons'>
                         <img src='./icons/unmarked.png'>
                         <img src='./icons/delete.png'>
