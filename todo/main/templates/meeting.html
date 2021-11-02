@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homework lesson 32</title>
-    <link rel='stylesheet' href="{% static 'styles/index.css' %}">
+    <link rel='stylesheet' href="{% static 'styles/styles_meet.css' %}">
     <link rel='stylesheet' href="{% static 'styles/checkbox.css' %}">
 </head>
 
@@ -30,16 +30,15 @@
                         <span class='checkmark'></span>
                     </label>
                     <h4>{{ tomeet.persone }}</h4>
+
+
                 </div>
                 <div class='todo_item_footer'>
-                    <p>{{ tomeet.date_of_meeting }}</p>
-                    <p>{{ tomeet.phone_number }}</p>
+                    <p>{{ tomeet.phone_number }}<span>{{ tomeet.date_of_meeting }}</span></p>
                     <h5>{{ tomeet.is_closed }}</h5>
                     <h5>{{ tomeet.is_favorite }}</h5>
-                    <div class='action_buttons'>
-                        <img src='./icons/unmarked.png'>
-                        <img src='./icons/delete.png'>
-                    </div>
+
+
                 </div>
             </div>
             {% endfor %}

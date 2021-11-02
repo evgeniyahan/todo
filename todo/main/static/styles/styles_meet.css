@@ -25,9 +25,9 @@ section {
 
 .create_button {
     padding: 12px 20px;
-    background-color: #9d93d8;
-    border: 1px solid #CE93D8;
-    color: white;
+    background-color: #e7e427;
+    border: 1px solid #b8b514;
+    color: rgb(255, 255, 255);
     font-size: 18px;
     text-transform: uppercase;
     font-weight: bold;
@@ -49,11 +49,11 @@ section {
 }
 
 .todo_item {
-    border: 1px solid gray;
+    border: 1px solid rgb(175, 209, 95);
     border-radius: 5px;
     width: 24%;
     padding: 10px 15px;
-    background-color: #c8e6c9;
+    background-color: #97cc53;
     margin-bottom: 20px;
 }
 
@@ -61,21 +61,6 @@ section {
     background-color: #e0e0e0;
     text-decoration: line-through;
     color: #757575
-}
-
-.todo_item.done h4,
-.todo_item.done p,
-.todo_item.done span {
-    color: #757575
-}
-
-.todo_item.done img {
-    opacity: 0.5;
-}
-
-.todo_item.marked {
-    background-color: #ffe082;
-    border: 2px solid #fad66a;
 }
 
 .todo_item_header {
@@ -98,15 +83,6 @@ section {
 .todo_item_footer p {
     font-size: 15px;
     font-family: sans-serif;
-}
-
-.todo_item_footer .action_buttons {
-    display: flex;
-}
-
-.todo_item_footer img {
-    width: 25px;
-    height: 25px;
-    margin: 0 5px;
-    cursor: pointer;
+    padding: 12px 20px;
+    font-weight: bold;
 }
