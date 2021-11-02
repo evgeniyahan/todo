@@ -12,7 +12,7 @@
     <h1>This is a testing page</h1>
     <h2>For lesson 32</h2>
     {% for todo in todo_list %}
-    <h3>{{ todo.text }}</h3>
+    <h3>{{ todo.text }} - {{todo.created_at}}</h3>
     {% endfor %}
 
 </body>
