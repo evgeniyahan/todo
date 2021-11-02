@@ -21,7 +21,7 @@
 
         <div class='todo_container'>
 
-            {% for todo in todo_list %}
+            {% for tomeet in tomeet_list %}
 
             <div class='todo_item'>
                 <div class='todo_item_header'>
@@ -29,10 +29,10 @@
                         <input type='checkbox' />
                         <span class='checkmark'></span>
                     </label>
-                    <h4>{{ todo.text }}</h4>
+                    <h4>{{ tomeet.persone }}</h4>
                 </div>
                 <div class='todo_item_footer'>
-                    <p>{{ todo.created_at }}</p>
+                    <p>{{ tomeet.date_of_meeting }}</p>
                     <div class='action_buttons'>
                         <img src='./icons/unmarked.png'>
                         <img src='./icons/delete.png'>
