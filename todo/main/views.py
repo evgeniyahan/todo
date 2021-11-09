@@ -1,4 +1,4 @@
-from django.shortcuts import render,HttpResponse, redirect
+from django.shortcuts import render, HttpResponse, redirect
 from .models import ToDo, ToMeet, Habits
 
 
@@ -29,6 +29,18 @@ def add_meeting(request):
     tomeet = ToMeet(persone=text)
     tomeet.save()
     return redirect(meeting)
+ 
+def habits(request):
+   habits_list = Habits.objects.all()
+   return render(request,'habits.html',{'habits_list' : habits_list})
+
+def add_habits(request):
+    form2 = request.POST
+    text = form2["habits_text"]
+    todo = Habits(name=text)
+    todo.save()
+    return redirect(habits)
+    
 
 
 
