@@ -1,5 +1,5 @@
 from django.shortcuts import render,HttpResponse, redirect
-from .models import ToDo, ToMeet
+from .models import ToDo, ToMeet, Habits
 
 
 def homepage(request):
@@ -22,5 +22,14 @@ def add_todo(request):
     todo = ToDo(text=text)
     todo.save()
     return redirect(test1)
+    
+def add_meeting(request):
+    form1 = request.POST
+    text = form1["tomeet_text"]
+    tomeet = ToMeet(persone=text)
+    tomeet.save()
+    return redirect(meeting)
+
+
 
 

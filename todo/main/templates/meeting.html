@@ -14,9 +14,11 @@
 <body>
     <section>
         <div class='create_container'>
-            <input class='create_input' type='text' placeholder="Напишите сюда новую встречу ">
-            <button class='create_button'>Добавить</button>
-
+            <form action="{% url 'add-meeting' %}" method='POST'>
+                {% csrf_token %}
+                <input class='create_input' type='text' placeholder="Напишите сюда новую встречу " name="tomeet_text" />
+                <button class='create_button'>Добавить</button>
+            </form>
         </div>
 
         <div class='todo_container'>
@@ -31,13 +33,11 @@
                     </label>
                     <h4>{{ tomeet.persone }}</h4>
 
-
                 </div>
                 <div class='todo_item_footer'>
                     <p>{{ tomeet.phone_number }}<br><br><span>{{ tomeet.date_of_meeting }}</span></p>
                     <h5>{{ tomeet.is_closed }}</h5>
                     <h5>{{ tomeet.is_favorite }}</h5>
-
 
                 </div>
             </div>
