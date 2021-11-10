@@ -35,7 +35,13 @@ def mark_undo(request, id):
     todo.is_favourite = False
     todo.save()
     return redirect(test1)
-    
+
+def close_todo(request, id):
+    todo = ToDo.objects.get(id=id)
+    todo.is_closed = not todo.is_closed
+    todo.save()
+    return redirect(test1)
+
 def meeting(request):
     tomeet_list = ToMeet.objects.all()
     return render(request,'meeting.html',{'tomeet_list' : tomeet_list})
