@@ -26,10 +26,10 @@ urlpatterns = [
     path('test1/', test1, name='test1'),
     path('meeting/', meeting, name='meeting'),
     path('habits/', habits, name='habits'),
-    
     path('add-todo/', add_todo, name='add-todo'),
     path('add-meeting/', add_meeting, name='add-meeting'),
     path('add-habits/', add_habits, name='add-habits'),
+    path("delete-todo/<id>/", delete_todo, name="delete-todo"),
 
     
  ]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \

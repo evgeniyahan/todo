@@ -12,17 +12,22 @@ def test1(request):
     todo_list = ToDo.objects.all()
     return render(request,'test1.html',{'todo_list' : todo_list})
 
-def meeting(request):
-    tomeet_list = ToMeet.objects.all()
-    return render(request,'meeting.html',{'tomeet_list' : tomeet_list})
-
 def add_todo(request):
     form = request.POST
     text = form["todo_text"]
     todo = ToDo(text=text)
     todo.save()
     return redirect(test1)
+
+def delete_todo(request, id):
+    todo = ToDo.objects.get(id=id)
+    todo.delete()
+    return redirect(test1)
     
+def meeting(request):
+    tomeet_list = ToMeet.objects.all()
+    return render(request,'meeting.html',{'tomeet_list' : tomeet_list})
+
 def add_meeting(request):
     form1 = request.POST
     text = form1["tomeet_text"]
@@ -40,8 +45,4 @@ def add_habits(request):
     todo = Habits(name=text)
     todo.save()
     return redirect(habits)
-    
-
-
-
 

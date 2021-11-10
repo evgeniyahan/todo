@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson 32</title>
+    <title>Todo</title>
     <link rel='stylesheet' href="{% static 'styles/index.css' %}">
     <link rel='stylesheet' href="{% static 'styles/checkbox.css' %}">
 </head>
@@ -39,8 +39,8 @@
                 <div class='todo_item_footer'>
                     <p>{{ todo.created_at }}</p>
                     <div class='action_buttons'>
-                        <img src="{% static './icons/unmarked.png' %} " />
-                        <img src="{% static './icons/delete.png' %} ">
+                        <img src="{% static './icons/unmarked.png' %}" />
+                        <a href="{% url 'delete-todo' todo.id  %}"><img src=" {% static './icons/delete.png' %} " /></a>
                     </div>
                 </div>
             </div>
