@@ -23,6 +23,18 @@ def delete_todo(request, id):
     todo = ToDo.objects.get(id=id)
     todo.delete()
     return redirect(test1)
+
+def mark_todo(request, id):
+    todo = ToDo.objects.get(id=id)
+    todo.is_favourite = True
+    todo.save()
+    return redirect(test1)
+
+def mark_undo(request, id):
+    todo = ToDo.objects.get(id=id)
+    todo.is_favourite = False
+    todo.save()
+    return redirect(test1)
     
 def meeting(request):
     tomeet_list = ToMeet.objects.all()
