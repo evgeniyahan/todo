@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homework lesson 32</title>
-    <link rel='stylesheet' href="{% static 'styles/styles_meet.css' %}">
+    <link rel='stylesheet' href="{% static 'styles/index.css' %}">
     <link rel='stylesheet' href="{% static 'styles/checkbox.css' %}">
 </head>
 
@@ -25,7 +25,11 @@
 
             {% for tomeet in tomeet_list %}
 
-            <div class='todo_item'>
+            <div class='todo_item
+                {% if tomeet.is_favorite %} 
+                marked 
+                {% endif %} 
+                '>
                 <div class='todo_item_header'>
                     <label class='checkbox_container'>
                         <input type='checkbox' />
@@ -35,10 +39,18 @@
 
                 </div>
                 <div class='todo_item_footer'>
-                    <p>{{ tomeet.phone_number }}<br><br><span>{{ tomeet.date_of_meeting }}</span></p>
-                    <h5>{{ tomeet.is_closed }}</h5>
-                    <h5>{{ tomeet.is_favorite }}</h5>
+                    <div class='action_buttons'>
+                        {% if tomeet.is_favorite %}
+                        <a href="{% url 'unmark-tomeet' tomeet.id  %}"><img src="{% static './icons/marked.png' %}" /></a>
+                        {% else %}
+                        <a href="{% url 'mark-tomeet' tomeet.id  %}"><img src="{% static './icons/unmarked.png' %}" /></a>
+                        {% endif %}
+                        <a href="{% url 'delete-tomeet' tomeet.id  %}"><img src=" {% static './icons/delete.png' %} " /></a>
 
+                        <p>{{ tomeet.phone_number }}<br><br><span>{{ tomeet.date_of_meeting }}</span></p>
+                        <h5>{{ tomeet.is_closed }}</h5>
+
+                    </div>
                 </div>
             </div>
             {% endfor %}

@@ -32,6 +32,9 @@ urlpatterns = [
     path("delete-todo/<id>/", delete_todo, name="delete-todo"),
     path("mark-todo/<id>/", mark_todo, name="mark-todo"),
     path("mark-undo/<id>/", mark_undo, name="mark-undo"),
+    path("delete-tomeet/<id>/", delete_tomeet, name="delete-tomeet"),
+    path("mark-tomeet/<id>/", mark_tomeet, name="mark-tomeet"),
+    path("unmark-tomeet/<id>/", unmark_tomeet, name="unmark-tomeet"),
 
     
  ]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
