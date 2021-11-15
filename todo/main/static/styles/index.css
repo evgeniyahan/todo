@@ -60,13 +60,13 @@ section {
 .todo_item.done {
     background-color: #e0e0e0;
     text-decoration: line-through;
-    color: #757575
+    color: #757575;
 }
 
 .todo_item.done h4,
 .todo_item.done p,
 .todo_item.done span {
-    color: #757575
+    color: #757575;
 }
 
 .todo_item.done img {
